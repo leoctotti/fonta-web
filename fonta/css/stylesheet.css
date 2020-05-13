@@ -1,0 +1,449 @@
+/* 
+    Website made by Leonardo Totti 
+*/
+@font-face {
+    font-family: 'Gilroy-Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Gilroy-Bold.woff');
+    }
+@font-face {
+    font-family: 'Gilroy-Heavy';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Gilroy-Heavy.woff');
+    }
+@font-face {
+    font-family: 'Gilroy-Light';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Gilroy-Light.woff');
+    }
+@font-face {
+    font-family: 'Gilroy-Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Gilroy-Medium.woff');
+    }
+@font-face {
+    font-family: 'Gilroy-Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/Gilroy-Regular.woff');
+    }
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #0e0e10;
+    color: #efeff1;
+    transition: .5s;
+}
+a, a:hover {
+    color: unset;
+    text-decoration: none;
+}
+.middle-content .col {
+    background-color: #333333;
+    border-radius: 15px;
+    padding: 1em;
+    margin: 1em;
+}
+.navbar-links {
+    font-size: 18px;
+    transition: .5s;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 1.5em!important;
+    font-family: 'Gilroy-Bold';
+}
+.navbar-links::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width .3s;
+}
+.navbar-links:hover::after {
+    width: 100%;
+}
+.navbar-actived-link::after, .navbar-links::selection {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transition: width .3s;
+}
+::selection {
+    color: #efeff1;
+    background-color: #ff9900;
+}
+/* Scrollbar Animation Start */
+::-webkit-scrollbar {
+    width: 0;
+}
+#scrollPath {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background-color: rgba(255,255,255,0.05);
+    z-index: 9999; 
+}
+#progressbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    animation: progressbar 5s linear infinite;
+    z-index: 9999;  
+}
+@keyframes progressbar {
+    0%,100%{
+        filter: hue-rotate(0deg)
+    }
+    50% {
+        filter: hue-rotate(360deg);
+    }
+}
+#progressbar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+}
+#progressbar:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(30px);
+}
+/* Scrollbar Animation End */
+@media (max-width: 600px) {
+
+}
+@media (max-width: 767px) {
+    .col-md-2 {
+        text-align: center!important;
+    }
+    .toggle-div {
+        text-align: center!important;
+        padding: 1em;
+    }
+    .display-v-details-before {
+        display: none;
+    }
+}
+@media (max-width: 991px) {
+    nav.navbar {
+        padding: 2em;
+    }
+}
+@media (min-width: 768px) {
+    .display-v-details-after {
+        display: none;
+    }
+}
+@media (min-width: 992px) {
+    #burger {
+        display: none;
+    }
+    .burger-div {
+        display: none!important;
+    }
+}
+.toggle-button {
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+    font-size: 32px;
+    outline: none;
+}
+*:focus, *::selection {
+    outline: none!important;
+}
+.toggle-div {
+    text-align: right;
+}
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.sidebar ul li {
+    width: 100%;
+    padding: 0.3em;
+}
+#main {	
+    transition: margin-left .5s;
+}
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+.bg-fonta {
+    filter: blur(3px) brightness(0.5);
+}
+.img-fonta {
+    box-shadow: 10px 10px 20px #10ab9e;
+}
+nav.navbar {
+    background-color: #0d0d0d;
+}
+.entry-title {
+    font-family: 'Proza', sans-serif;
+    font-size: 80px;
+    text-transform: uppercase;
+}
+.entry-subtitle {
+    text-decoration: underline;
+    font-size: 36px;
+}
+.text-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1em;
+    text-align: center;
+}
+.video-placement {
+    padding: 1em!important;
+}
+.video-title {
+    font-family: 'Gilroy-Bold';
+}
+.video-desc {
+    text-align: justify;
+    text-justify: inter-word;
+}
+.video-details {
+    padding: 1.5em;
+}
+.content-start {
+    margin-top: 50px;
+}
+.burger {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.logo-display {
+    display: none;
+}
+#logo-display {
+    transition: .5s;
+}
+.main-background {
+    z-index: -1;
+    background-image: url('../img/bg-01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 390px 1em;
+    background-position: center center;
+}
+.title-branding {
+    font-size: 70px;
+    font-family: 'Gilroy-Bold';
+}
+.span-branding {
+    font-size: 80px;
+}
+.about-image {
+    border-radius: 500px;
+}
+.about-div {
+    background-color: #1a1a1a;
+    padding: 1.5em!important;
+    border-radius: 10px;
+    width: 100%;
+}
+.social-icon {
+    border-radius: 200px;
+    font-size: 32px;
+    color: white;
+    padding: 0.6em;
+    transition: .3s;
+}
+.social-icon.instagram:hover {
+    color: #ff0066;
+}
+.social-icon.email:hover {
+    color: #0000ff;
+}
+footer {
+    padding: 150px 1em;
+}
+footer p {
+    margin-bottom: 0;
+}
+.icons-div {
+    margin-bottom: 50px;
+}
+@media (max-width: 575px) {
+    .about-div {
+        margin: 1em!important;
+    }
+}
+@media (max-width: 1424px) {
+    .main-background {
+        padding: 310px 1em;
+    }
+}
+@media (max-width: 600px) {
+    .main-background {
+        padding: 250px 1em;
+    }
+}
+
+/* Fixing the video width start */
+@media (max-width: 1199px) {
+    .video-placement iframe {
+        height: 250px;
+    }
+}
+@media (min-width: 1200px) {
+    .video-placement iframe {
+        width: 92%;
+        height: 280px;
+    }
+}
+@media (max-width: 991px) {
+    .video-placement iframe {
+        width: 100%;
+        height: 185px;
+    }
+}
+@media (max-width: 767px) {
+    .video-placement iframe {
+        height: 290px;
+    }
+}
+@media (max-width: 560px) {
+    .video-placement iframe {
+        height: 250px;
+    }
+}
+@media (max-width: 490px) {
+    .video-placement iframe {
+        height: 230px;
+    }
+}
+@media (max-width: 440px) {
+    .video-placement iframe {
+        height: 200px;
+    }
+}
+@media (max-width: 410px) {
+    .video-placement iframe {
+        height: 180px;
+    }
+}
+@media (max-width: 390px) {
+    .video-placement iframe {
+        height: 160px;
+    }
+}
+/* Fixing the video width end */
+.s-b-mobile-1 {
+    transform: translateX(160px);
+}
+.subtitle-branding {
+    font-family: 'Gilroy-Medium';
+    font-size: 32px;
+}
+.img-placement {
+    padding: 0.1em;
+    margin-top: 0.5em;
+    transition: .5s;
+}
+.card {
+    background-color: #1a1a1a;
+}
+#backtotop {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #backtotop::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #backtotop:hover {
+    cursor: pointer;
+    text-decoration: none!important;
+  }
+
+  #backtotop.show {
+    opacity: 1;
+    visibility: visible;
+  }
+@media (max-width: 1389px) {
+    .s-b-mobile-1 {
+        display: none;
+    }
+}
+@media (min-width: 1390px) {
+    .s-b-mobile-2 {
+        display: none;
+    }
+}
+.photos-title {
+    font-family: 'Gilroy-Bold';
+}
+.videos-title {
+    font-family: 'Gilroy-Bold';
+}
+.contact-title {
+    font-family: 'Gilroy-Bold';
+}
+.contact-desc {
+    font-size: 18px;
+}
+.not-found-div {
+	margin-top: 150px;
+}
+.not-found-title {
+	font-family: 'Gilroy-Bold';
+}
